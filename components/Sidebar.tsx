@@ -39,17 +39,17 @@ const Sidebar: React.FC = () => {
 				<p>
 					<span className="has-text-weight-bold">WEB SITE</span>
 					<br />
-					<a href="https://www.twinte.net">www.twinte.net</a>
+					<a href="http://tusformularacing.main.jp/">tusformularacing HP</a>
 				</p>
 				<p>
 					<span className="has-text-weight-bold">Twitter</span>
 					<br />
-					<a href="https://twitter.com/te_twin">@te_twin</a>
+					<a href="https://twitter.com/tusfr">@tusfr</a>
 				</p>
 				<p>
 					<span className="has-text-weight-bold">E-mail</span>
 					<br />
-					<a href="mailto:info@twinte.net?subject=お問い合わせ">info@twinte.net</a>
+					<a href="mailto:info@twinte.net?subject=お問い合わせ">tusfr.mail@gmail.com</a>
 				</p>
 			</div>
 		</aside>
