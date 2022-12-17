@@ -7,6 +7,7 @@ import { registOneTime } from '../api/stripeApi';
 import { subscriptions } from '../utils/stripe';
 import { NextSeo } from 'next-seo';
 import { SweetModal } from '../components/SweetAlert';
+import Link from 'next/link';
 
 
 const Register: NextPage = () => {
@@ -50,6 +51,7 @@ const Register: NextPage = () => {
 				>
 					<a href="https://buy.stripe.com/test_8wMdRV9rlaOY0RW6oo" style={{ color: "white" }}>寄付する</a>
 				</button>
+				<p style={{ fontSize: 14, padding: 7 }}><Link href="/policy">特定商取引法に基づく表記について</Link></p>
 			</div>
 		</>
 	);

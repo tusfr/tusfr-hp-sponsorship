@@ -9,7 +9,7 @@ const Sidebar: React.FC = () => {
 		<aside className={styles.sidebar}>
 			<div className={styles.menuContent}>
 				<div className={styles.logo}>
-					<a href="https://sponsorship.twinte.net">
+					<a href="https://tusfr-hp-sponsorship.vercel.app/">
 						<Image src={TusfrLogo} alt="Tusfr_Logo" />
 					</a>
 				</div>
