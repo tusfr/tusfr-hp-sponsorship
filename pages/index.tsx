@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import styles from '../styles/pages/Home.module.scss';
-import TwinteCost from '../public/images/twinte-cost.jpg';
+import TusfrCar from "./../public/images/TFR13.jpg"
 import Image from 'next/image';
 import { NextSeo } from 'next-seo';
 import Link from 'next/link';
@@ -20,6 +20,7 @@ const Home: NextPage = () => {
 				<p>
 					今日まで機械工学研究会は不便なく活動を行うことができていましたが、私たちが使用していた溶接機が故障のため、どうしても資金が必要です。
 				</p>
+				<Image src={TusfrCar} alt="TusfrCar" />
 
 
 

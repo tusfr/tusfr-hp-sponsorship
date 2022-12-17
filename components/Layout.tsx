@@ -46,31 +46,8 @@ export const Layout: React.FC = ({ children }) => {
 				</div>
 				<div className="column">
 					<section className={`section ${styles.section}`}>
-						<header className="is-hidden-mobile">
-							<div className="has-text-right">
-								{isLogin == undefined ? (
-									<button className="button is-primary is-outlined is-loading" />
-								) : (
-									<button
-										className="button is-primary is-outlined has-text-weight-bold"
-										onClick={() => (isLogin ? handleLogout() : handleLogin())}
-									>
-										{isLogin ? 'ログアウト' : 'ログイン'}
-									</button>
-								)}
-							</div>
-						</header>
+
 						<main>{children}</main>
-						<footer className="has-text-centered-mobile has-text-right-tablet mt-6">
-							<a href="https://vercel.com?utm_source=twin-te&utm_campaign=oss">
-								<Image
-									src="https://www.datocms-assets.com/31049/1618983297-powered-by-vercel.svg"
-									width={212}
-									height={44}
-									alt="Vercel"
-								/>
-							</a>
-						</footer>
 					</section>
 				</div>
 			</div>

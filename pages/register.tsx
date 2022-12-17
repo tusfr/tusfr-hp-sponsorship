@@ -13,121 +13,64 @@ import Link from 'next/link';
 const Register: NextPage = () => {
 	const isLogin = useLoginStatus();
 	const [donationPriceIndex, setDonationPriceIndex] = useState(0);
+	const [donationPrice, setDonationPrice] = useState(0);
 	const donationPrices = [500, 1000, 1500, 2000, 3000, 5000, 7000, 10000];
 	const [subscriptionID, setSubscriptionID] = useState(subscriptions[0].planId);
+	const [alert, setAlert] = useState('');
 
 	const confirmRegistOneTime = async () => {
 		await SweetModal.fire({
-			title: 'ログインをしてください。',
-			text: '寄付をするには、右上のログインボタンよりログインをしてください。',
-			showCancelButton: false,
-			confirmButtonText: 'はい'
-		});
-	};
-	const confirmRegistSubscription = async () => {
-		await SweetModal.fire({
-			title: 'ログインをしてください。',
-			text: '継続的な寄付をするには、右上のログインボタンよりログインをしてください。',
+			title: '金額の設定について',
+			text: '本サービスは500円以上から受け付けております。500円以上に設定し直してください',
 			showCancelButton: false,
 			confirmButtonText: 'はい'
 		});
 	};
 
-	const radioButtons = () => {
-		return subscriptions.map((plan, index) => {
-			return (
-				<div key={index} className="field has-text-weight-bold">
-					<RadioButton
-						defaultChecked={index === 0}
-						name="priceChoice"
-						id={`plan_${index}`}
-						value={plan.planId}
-						onChange={(inputValue) => {
-							setSubscriptionID(inputValue);
-						}}
-					>
-						{plan.amount}円/月
-					</RadioButton>
-				</div>
-			);
-		});
+
+	const changeDonation = (e: any) => {
+		if (e >= 0) {
+			setAlert('');
+			setDonationPrice(e);
+		} else if (e < 0) {
+			setAlert('上記に自然数を入力してください');
+		}
 	};
 
 	return (
 		<>
 			<NextSeo title="寄付・サブスク登録" />
-			<h1 className="title pagetitle">寄付・サブスク登録</h1>
+			<h1 className="title pagetitle">機械工学研究会への寄付</h1>
 			<div className="card">
 				<h1 className={`title ${styles.title}`}>1回きりの決済による寄付</h1>
 				<p>
 					1回の決済による単発の寄付です。 <br />
-					スライダーを動かして金額を設定し、「寄付する」ボタンを押すと、決済ページへ移動します。
+					下記の入力するスペースで金額を設定し、「寄付する」ボタンを押すと、決済ページへ移動します。
 				</p>
-				<p className={`has-text-centered has-text-primary ${styles.price}`}>¥{donationPrices[donationPriceIndex]}</p>
-				<div className={styles.slider}>
-					<Slider
-						styles={{
-							active: {
-								backgroundColor: '#97C3C3'
-							},
-							track: {
-								width: '100%'
-							},
-							thumb: {
-								height: '1.5rem',
-								width: '1.5rem',
-								border: 'solid 0.4rem #00c0c0'
-							}
+				<p className={`has-text-centered has-text-primary ${styles.price}`}>¥{donationPrice > 0 ? donationPrice : 0}</p>
+				<div style={{ textAlign: "center" }}>
+					<input
+						type="number"
+						value={donationPrice}
+						onChange={(e) => {
+							changeDonation(e.target.value);
 						}}
-						axis="x"
-						xmin={0}
-						xmax={7}
-						x={donationPriceIndex}
-						onChange={(price) => setDonationPriceIndex(price.x)}
 					/>
 				</div>
-				<p className="has-text-primary">
-					ご協力いただく金額で、Twin:teを
-					<span style={{ fontWeight: 'bold' }}>
-						{Math.round((Math.floor(donationPrices[donationPriceIndex] * 0.964) / 5000) * 100) / 100}ヶ月
-					</span>
-					運営することができます。
-				</p>
+
 				<p className={styles.priceNotification}>
-					※手数料を差し引くとTwin:teには{donationPrices[donationPriceIndex] * 0.964}円寄付されます。
+					※手数料を差し引くとTwin:teには{(donationPrice * 0.964).toFixed()}円寄付されます。
 				</p>
+				<div>
+					<p style={{ color: 'red' }}>{alert}</p>
+				</div>
 				<button
 					className={`button is-fullwidth is-primary ${styles.buttons}`}
 					onClick={() => {
-						isLogin ? registOneTime(donationPrices[donationPriceIndex]) : confirmRegistOneTime();
+						donationPrice >= 500 ? registOneTime(donationPrice) : confirmRegistOneTime();
 					}}
 				>
 					寄付する
-				</button>
-			</div>
-
-			<div className="card">
-				<h1 className={`title ${styles.title}`}>サブスクリプション（毎月のお支払い）の登録</h1>
-				<p>
-					毎月決済が行われるサブスクリプションです。
-					<br />
-					月ごとにお支払いいただく金額を下記から選択し、「登録する」ボタンを押すと、決済ページへ移動します。
-				</p>
-				<p className="has-text-weight-bold">
-					このサブスクリプションは
-					<Link href="/mypage" passHref>
-						マイページ
-					</Link>
-					よりいつでもご解約いただけます。
-				</p>
-				<div className={`field ${styles.radioButtonField}`}>{radioButtons()}</div>
-				<button
-					className={`button is-fullwidth is-primary ${styles.buttons}`}
-					onClick={() => {
-						isLogin ? registSubscription(subscriptionID) : confirmRegistSubscription();
-					}}
-				>
-					登録する
 				</button>
 			</div>
 		</>

@@ -7,6 +7,7 @@ import Sidebar from './Sidebar';
 import Router from 'next/router';
 import Image from 'next/image';
 import TwinteLogo from '../public/images/twinte-sponsor-title.png';
+import TusfrLogo from "./../public/images/TUS_logo.png";
 
 type Props = {
 	isLogin: undefined | boolean;
@@ -42,26 +43,16 @@ const MobileHeader: React.FC<Props> = ({ isLogin, handleLogin, handleLogout }) =
 				</button>
 				<Link href="/" passHref>
 					<Image
-						src={TwinteLogo}
-						alt="Twin:te_Logo"
+						src={TusfrLogo}
+						alt="Tusfr_Logo"
 						className={styles.logo}
 						width={100}
 						height={40}
 						objectFit="contain"
 					/>
 				</Link>
-				<div className={styles.buttonWrapper}>
-					{isLogin == undefined ? (
-						<button className={`button is-text is-loading ${styles.button}`} />
-					) : (
-						<button
-							className={`button is-text has-text-weight-bold ${styles.button}`}
-							onClick={() => (isLogin ? handleLogout() : handleLogin())}
-						>
-							{isLogin ? 'ログアウト' : 'ログイン'}
-						</button>
-					)}
-				</div>
+				<p style={{ fontSize: 32, color: 'white', fontWeight: 500 }}>TUS Formula Racing</p>
+
 			</div>
 
 			<Drawer open={isDrawerOpen} onClose={() => toggleDrawer(false)} direction="left" size={200}>
