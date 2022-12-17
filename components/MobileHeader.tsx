@@ -51,7 +51,7 @@ const MobileHeader: React.FC<Props> = ({ isLogin, handleLogin, handleLogout }) =
 						objectFit="contain"
 					/>
 				</Link>
-				<p style={{ fontSize: 32, color: 'white', fontWeight: 500 }}>TUS Formula Racing</p>
+				<p style={{ fontSize: 32, color: 'white', fontWeight: 500 }}>TUS FR</p>
 
 			</div>
 

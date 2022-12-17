@@ -46,8 +46,9 @@ const MyPage: NextPage = () => {
 
 	return (
 		<>
+			<h1>開発中</h1>
 			<NextSeo title="マイページ" />
-			<div className={styles.content}>
+			{/* <div className={styles.content}>
 				<h1 className="title pagetitle">マイページ</h1>
 				{isLogin ? (
 					<>
@@ -173,7 +174,7 @@ const MyPage: NextPage = () => {
 						右上の「<span className="has-text-weight-bold">ログイン</span>」ボタンからログインしてください。
 					</p>
 				)}
-			</div>
+			</div> */}
 		</>
 	);
 };

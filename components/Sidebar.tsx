@@ -29,11 +29,6 @@ const Sidebar: React.FC = () => {
 							マイページ
 						</NavLink>
 					</li>
-					<li>
-						<NavLink href="/gift" activeClassName={styles.activeLink}>
-							返礼品一覧
-						</NavLink>
-					</li>
 				</ul>
 			</div>
 			<div className={`${styles.menuFooter} has-text-white`}>
