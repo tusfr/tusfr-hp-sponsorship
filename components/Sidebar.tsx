@@ -45,7 +45,7 @@ const Sidebar: React.FC = () => {
 				<p>
 					<span className="has-text-weight-bold">E-mail</span>
 					<br />
-					<p>tusfr.mail@gmail.com</p>
+					tusfr.mail@gmail.com
 				</p>
 			</div>
 		</aside>
