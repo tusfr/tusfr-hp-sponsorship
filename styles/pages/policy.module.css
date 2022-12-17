@@ -1,0 +1,13 @@
+  th,td {
+    border-bottom: solid 1px #444;
+    padding: 5px 0;
+    line-height: 1.5;
+  }
+  
+  th {
+    border-top: solid 1px #444;
+  }
+  
+  th span {
+    margin-left: 10px;
+  }

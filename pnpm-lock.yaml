@@ -6,6 +6,7 @@ specifiers:
   '@types/react': 17.0.43
   '@types/react-dom': 17.0.14
   '@types/react-modal': ^3.13.1
+  '@types/react-table': ^7.7.12
   '@typescript-eslint/eslint-plugin': ^5.18.0
   '@typescript-eslint/parser': ^5.18.0
   axios: ^0.26.1
@@ -25,6 +26,7 @@ specifiers:
   react-input-slider: ^6.0.1
   react-modal: ^3.14.4
   react-modern-drawer: ^1.1.1
+  react-table: ^7.8.0
   sass: ^1.50.0
   sweetalert2: ^11.4.8
   sweetalert2-react-content: ^5.0.0
@@ -44,6 +46,7 @@ dependencies:
   react-input-slider: 6.0.1_zpnidt7m3osuk7shl3s4oenomq
   react-modal: 3.16.1_zpnidt7m3osuk7shl3s4oenomq
   react-modern-drawer: 1.1.2_react@18.0.0
+  react-table: 7.8.0_react@18.0.0
   sweetalert2: 11.6.15
   sweetalert2-react-content: 5.0.7_3oe2jap3ohuoxgvs4iftbffeii
 
@@ -52,6 +55,7 @@ devDependencies:
   '@types/react': 17.0.43
   '@types/react-dom': 17.0.14
   '@types/react-modal': 3.13.1
+  '@types/react-table': 7.7.12
   '@typescript-eslint/eslint-plugin': 5.46.1_t5rqc7dsch5snypl7wmqzyzuqq
   '@typescript-eslint/parser': 5.46.1_thk3xo4exzjr5rl6cnexo7v6re
   eslint: 8.12.0
@@ -383,6 +387,12 @@ packages:
 
   /@types/react-modal/3.13.1:
     resolution: {integrity: sha512-iY/gPvTDIy6Z+37l+ibmrY+GTV4KQTHcCyR5FIytm182RQS69G5ps4PH2FxtC7bAQ2QRHXMevsBgck7IQruHNg==}
+    dependencies:
+      '@types/react': 17.0.43
+    dev: true
+
+  /@types/react-table/7.7.12:
+    resolution: {integrity: sha512-bRUent+NR/WwtDGwI/BqhZ8XnHghwHw0HUKeohzB5xN3K2qKWYE5w19e7GCuOkL1CXD9Gi1HFy7TIm2AvgWUHg==}
     dependencies:
       '@types/react': 17.0.43
     dev: true
@@ -2105,6 +2115,14 @@ packages:
     engines: {node: '>=10'}
     peerDependencies:
       react: '>16.0.0'
+    dependencies:
+      react: 18.0.0
+    dev: false
+
+  /react-table/7.8.0_react@18.0.0:
+    resolution: {integrity: sha512-hNaz4ygkZO4bESeFfnfOft73iBUj8K5oKi1EcSHPAibEydfsX2MyU6Z8KCr3mv3C9Kqqh71U+DhZkFvibbnPbA==}
+    peerDependencies:
+      react: ^16.8.3 || ^17.0.0-0 || ^18.0.0
     dependencies:
       react: 18.0.0
     dev: false
