@@ -19,7 +19,7 @@ bulmaToast.setDefaults({
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<Layout>
-			<GoogleTagManager googleTagManagerId={googleTagManagerId as GoogleTagManagerId} />
+
 			<DefaultSeo {...SEO} />
 			<Component {...pageProps} />
 		</Layout>
