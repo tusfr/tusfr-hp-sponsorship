@@ -58,9 +58,9 @@ const Success: NextPage = () => {
 					className="twitter-share-button"
 					data-text={getTwitterText()}
 					data-size="large"
-					data-url="https://sponsorship.twinte.net"
+					data-url="https://tusfr-hp-sponsorship.vercel.app/"
 					data-via="te_twin"
-					data-hashtags="Twinte"
+					data-hashtags="Tusfr"
 					data-related="te_twin"
 					data-show-count="false"
 				>

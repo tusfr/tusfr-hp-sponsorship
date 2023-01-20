@@ -1,6 +1,6 @@
 export const policy_datas = [
     { title: 'アプリ名', content: '理科大機械工学研究会　寄付ページ' },
-    { title: '販売事業者名', content: '東京理科大学　機械工学研究会' },
+    { title: '販売事業者名', content: 'Satoshi Egashira' },
     { title: '代表者名', content: '村越健吾' },
     { title: '所在地', content: '〒278-0022 \n 千葉県野田市山崎2641 東京理科大学 部室棟W104' },
     { title: 'お問い合わせ', content: 'こちら(tusfr.mail@gmail.com)からお問い合わせください' },
@@ -22,6 +22,6 @@ export const policy_datas = [
     },
     {
         title:'特別条件',
-        content:'１．クーリングオフについて \n 特定商取引法に規定されているクーリングオフが適用されるサービスではありません。'
+        content:'クーリングオフについて \n 特定商取引法に規定されているクーリングオフが適用されるサービスではありません。'
     }
 ];

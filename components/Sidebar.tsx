@@ -1,7 +1,6 @@
 import styles from '../styles/components/Sidebar.module.scss';
 import NavLink from './NavLink';
 import Image from 'next/image';
-import TwinteLogo from '../public/images/twinte-sponsor-title.png';
 import TusfrLogo from "./../public/images/TUS_logo.png";
 
 const Sidebar: React.FC = () => {

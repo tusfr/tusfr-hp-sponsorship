@@ -6,7 +6,6 @@ import { useEffect, useState } from 'react';
 import Sidebar from './Sidebar';
 import Router from 'next/router';
 import Image from 'next/image';
-import TwinteLogo from '../public/images/twinte-sponsor-title.png';
 import TusfrLogo from "./../public/images/TUS_logo.png";
 
 type Props = {
